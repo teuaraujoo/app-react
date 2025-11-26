@@ -4,14 +4,18 @@ import './NavBar.css';
 function NavBar(){
 
     const navigate = useNavigate();
-    function handleHome(){
-        navigate('/');
-    }
-    function handleSobre(){
-        navigate('/Sobre');
-    }
-    function handleContato(){
-        navigate('/Contato');
+      
+    function handleVaiPara(event){
+        const link = event.target.id;
+        if(link === 'Home'){
+            navigate('/');
+        }
+        else if(link === 'Sobre'){
+            navigate('/Sobre');
+        }
+        else if(link === 'Contato'){
+            navigate('/Contato');
+        }
     }
 
     return (
@@ -21,13 +25,13 @@ function NavBar(){
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <button class="nav-link active" aria-current="page" onClick={handleHome}>Home</button>
+                                <button id="Home" class="nav-link active" aria-current="page" onClick={handleVaiPara}>Home</button>
                             </li>
                             <li class="nav-item">
-                                <button class="nav-link" onClick={handleSobre}>Sobre</button>
+                                <button id="Sobre" class="nav-link" onClick={handleVaiPara}>Sobre</button>
                             </li>
                             <li class="nav-item">
-                                <button class="nav-link" onClick={handleContato}>Contato</button>
+                                <button id="Contato" class="nav-link" onClick={handleVaiPara}>Contato</button>
                             </li>
                         </ul>
                     </div>
