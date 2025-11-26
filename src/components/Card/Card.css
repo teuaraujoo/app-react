@@ -1,0 +1,13 @@
+.card {
+    width: 18rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+i {
+    font-size: 30px;
+    color: rgb(13, 110, 253);
+}
